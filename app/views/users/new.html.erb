@@ -3,13 +3,13 @@
 
 <%= form_for :user, url: users_path do |f| %>
  
-  <% if @article.errors.any? %>
+  <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2>
-        <%= pluralize(@article.errors.count, "error") %> while creating your account :
+        <%= pluralize(@user.errors.count, "error") %> while creating your account :
       </h2>
       <ul>
-        <% @article.errors.full_messages.each do |msg| %>
+        <% @user.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
       </ul>
@@ -17,8 +17,13 @@
   <% end %>
  
   <p>
-    <%= f.label :login %><br>
-    <%= f.text_field :login %>
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+  </p>
+
+  <p>
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
   </p>
  
   <p>
@@ -42,4 +47,4 @@
  
 <% end %>
  
-<%= link_to 'Back', users_path %>
+<%= link_to 'Back', root_path %>

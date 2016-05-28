@@ -12,7 +12,7 @@ class UsersController < ApplicationController
  
   		if @user.save
   			flash[:success] = "Welcome to Travel Express!"
-    		redirect_to @user
+    		redirect_to root_path
   		else
     		render 'new'
   		end
@@ -20,6 +20,6 @@ class UsersController < ApplicationController
 
 	private
 		def user_params
-			params.require(:user).permit(:login, :password, :password_confirmation, :email)
+			params.require(:user).permit(:first_name, :last_name, :password, :password_confirmation, :email)
 	 	end
 end
