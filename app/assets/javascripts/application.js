@@ -14,4 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require moment
+//= require jquery.flexslider-min
+//= require templatemo-script
 //= require_tree .
