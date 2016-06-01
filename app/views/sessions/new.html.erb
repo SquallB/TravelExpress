@@ -1,28 +1,5 @@
 <% provide(:title, "Log in") %>
-<h1>Log in</h1>
 
-<%= form_for(:session, url: login_path) do |f| %>
-
-	<p>
-		<%= f.label :login %>
-		<%= f.text_field :login %>
-	</p>
-
-	<p>
-		<%= f.label :password %>
-		<%= f.password_field :password %>
-	</p>
-
-	<p>
-		<%= f.label :remember_me, class: "checkbox inline" do %>
-			<%= f.check_box :remember_me %>
-			<span>Remember me on this computer</span>
-		<% end %>
-	</p>
-
-	<p>
-		<%= f.submit "Log in" %>
-	</p>
-<% end %>
+<%= render "login_form" %>
 
 <p>New user? <%= link_to "Sign up now!", signup_path %></p>

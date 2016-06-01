@@ -1,0 +1,40 @@
+<%= form_for :user, url: users_path, class: 'register' do |f| %>
+  <h3>Sign up</h3>
+  <%= render 'shared/error_messages' %>
+
+  <div class="column">
+    <div>
+      <%= f.label :first_name %><br>
+      <%= f.text_field :first_name, class: 'form-control' %>
+    </div>
+    <div>
+      <%= f.label :last_name %><br>
+      <%= f.text_field :last_name, class: 'form-control' %>
+    </div>
+    <div>
+      <%= f.label :password_confirmation, "Confirmation" %><br>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="column">
+    <div>
+      <%= f.label :login, 'Username' %><br>
+      <%= f.text_field :login, class: 'form-control' %>
+    </div>
+    <div>
+      <%= f.label :email %><br>
+      <%= f.email_field :email, class: 'form-control' %>
+    </div>
+    <div>
+      <%= f.label :password %><br>
+      <%= f.password_field :password, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="bottom">
+    <%= f.submit "Register", class: "btn btn-primary" %>
+    <a rel="login" class="linkform">
+      You have an account already? Log in here
+    </a>
+    <div class="clear"></div>
+  </div> 
+<% end %>

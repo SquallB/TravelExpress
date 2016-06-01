@@ -2,5 +2,20 @@
 
 <p>Home page of Travel Express</p>
 
-<p><%= link_to "Log in", login_path %></p>
-
+<p>
+	<% if logged_in? %>
+		<%= link_to "Log out", logout_path, method: "delete" %>
+	<% else %>
+		<button class="btn btn-link" data-toggle="modal" data-target="#loginModal">Log in</button>
+		<div id="loginModal" class="modal fade">
+			<div id="form_wrapper" class="form_wrapper center-block">
+				<!-- Inscription -->
+				<div class="container">
+					<div class="col-md-1 col-md-offset-6">
+						<!--<%= render '/users/signup_form' %>-->
+						<%= render '/sessions/login_form' %>
+					</div>
+				</div>
+		</div>
+	<% end %>
+</p>
