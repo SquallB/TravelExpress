@@ -123,7 +123,7 @@ http://www.templatemo.com/tm-475-holiday
 								<li><a href="about.html">About</a></li>
 								<li><a href="tours.html">Our Tours</a></li>
 								<li><a href="contact.html">Contact</a></li>
-								<li><a href="babou.html">Contact2</a></li>
+								<li><a href="profile.html">Contact2</a></li>
 							</ul>
 
 						</nav>		
@@ -196,73 +196,47 @@ http://www.templatemo.com/tm-475-holiday
 
 											<div class="col-lg-6">
 												<div class="form-group">
-													<select class="form-control">
-														<option value="">-- Select Model -- </option>
-														<option value="shangrila">BMW</option>
-														<option value="chatrium">Mercedes-Benz</option>
-														<option value="fourseasons">Toyota</option>
-														<option value="hilton">Honda</option>
-													</select> 
+														<input placeholder="Départ" class="form-control" type="text" />
 												</div>
+
 												<div class="form-group">
-													<div class='input-group date-time' id='datetimepicker3'>
-														<input type='text' class="form-control" placeholder="Pickup Date" />
-														<span class="input-group-addon">
-															<span class="fa fa-calendar"></span>
-														</span>
+													<div class="row">
+														<div class="col-lg-6">
+															<div class='input-group date' id='datetimepicker3'>
+																<input type='text' class="form-control" placeholder="Pickup Date" />
+																<span class="input-group-addon">
+																	<span class="fa fa-calendar"></span>
+																</span>
+															</div>
+														</div>
+														<div class="col-lg-6">
+															<div class='input-group date-hour' id='datetimepicker3'>
+																<input type='text'  class="form-control" placeholder="Pickup Hour" />
+																<span class="input-group-addon">
+																	<span class="fa fa-calendar"></span>
+																</span>
+															</div>
+														</div>
 													</div>
 												</div>
-												<div class="form-group">
-													<div class='input-group date-time' id='datetimepicker4'>
-														<input type='text' class="form-control" placeholder="Return Date" />
-														<span class="input-group-addon">
-															<span class="fa fa-calendar"></span>
-														</span>
-													</div>
-												</div>
-												<div class="form-group">
-													<select class="form-control">
-														<option value="">-- Options -- </option>
-														<option value="">Child Seat</option>
-														<option value="">GPS Navigator</option>
-														<option value="">Insurance</option>
-													</select> 
-												</div>							           
+																			           
 											</div>	
 											<div class="col-lg-6">
 												<div class="form-group">
-													<select class="form-control">
-														<option value="">-- Select Model -- </option>
-														<option value="shangrila">BMW</option>
-														<option value="chatrium">Mercedes-Benz</option>
-														<option value="fourseasons">Toyota</option>
-														<option value="hilton">Honda</option>
-													</select> 
+														<input placeholder="Destination" class="form-control" type="text" />
 												</div>
-												<div class="form-group">
-													<div class='input-group date-time' id='datetimepicker3'>
-														<input type='text' class="form-control" placeholder="Pickup Date" />
-														<span class="input-group-addon">
-															<span class="fa fa-calendar"></span>
-														</span>
-													</div>
-												</div>
-												<div class="form-group">
-													<div class='input-group date-time' id='datetimepicker4'>
-														<input type='text' class="form-control" placeholder="Return Date" />
-														<span class="input-group-addon">
-															<span class="fa fa-calendar"></span>
-														</span>
-													</div>
-												</div>
+												
 												<div class="form-group">
 													<select class="form-control">
-														<option value="">-- Options -- </option>
-														<option value="">Child Seat</option>
-														<option value="">GPS Navigator</option>
-														<option value="">Insurance</option>
+														<option value=""> Passengers </option>
+														<option value="shangrila">1</option>
+														<option value="chatrium">2</option>
+														<option value="fourseasons">3</option>
+														<option value="hilton">4</option>
 													</select> 
-												</div>							           
+												</div>
+												
+																		           
 											</div>		
 
 										</div>
@@ -279,7 +253,7 @@ http://www.templatemo.com/tm-475-holiday
 
 				</div>
 			</div>
-			<div class="row section-margin-top">
+			<div class="row ">
 				<div class="col-lg-4 col-md-4 col-sm-6">
 					<div class="tm-home-box-1 tm-home-box-1-2 tm-home-box-1-center">
 						<img src="img/index-01.jpg" alt="image" class="img-responsive">
@@ -289,6 +263,17 @@ http://www.templatemo.com/tm-475-holiday
 								<span>$6,600</span>
 							</div>	
 						</a>			
+					</div>				
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-6">
+					<div class="tm-home-box-1 tm-home-box-1-2 tm-home-box-1-right">
+						<img src="img/index-02.jpg" alt="image" class="img-responsive">
+						<a href="#">
+							<div class="tm-red-gradient-bg tm-city-price-container">
+								<span>Paris</span>
+								<span>$4,200</span>
+							</div>	
+						</a>					
 					</div>				
 				</div>
 				<div class="col-lg-4 col-md-4 col-sm-6">
@@ -477,7 +462,14 @@ http://www.templatemo.com/tm-475-holiday
 				$('.date').datetimepicker({
 					format: 'MM/DD/YYYY'
 				});
+
+
 				$('.date-time').datetimepicker();
+
+				$('.date-hour').datetimepicker({
+
+					format: 'hh:mm'
+				});
 
 				// https://css-tricks.com/snippets/jquery/smooth-scrolling/
 				$('a[href*=#]:not([href=#])').click(function() {

@@ -660,6 +660,15 @@ hr { border-top: 1px solid #111010; }
 }
 .contact-social .tm-social-icon:last-child { margin-right: 0; }
 
+
+
+.profile-img{
+	margin-top: 3%;
+	margin-left: 4%;
+	
+
+}
+
 @media screen and (max-width: 1199px) {
 	.tm-banner-title { font-size: 50px; }
 	.tm-banner-subtitle { font-size: 30px; }
