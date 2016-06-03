@@ -1080,7 +1080,8 @@ hr { border-top: 1px solid #111010; }
 
 
 .loggedStatusName{
-	padding-top: 20px;
+	padding-top: 10px;
+
 }
 #loggedName{
 
@@ -1089,4 +1090,5 @@ hr { border-top: 1px solid #111010; }
 	border-radius: 0;
 	color: #000;
 	font-weight: 800;
+	font-size: 8px;
 }
