@@ -15,7 +15,6 @@ http://www.templatemo.com/tm-475-holiday
 <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">  
 <link href="css/flexslider.css" rel="stylesheet">
 <link href="css/templatemo-style.css" rel="stylesheet">
-<link href="css/Inscription.css" rel="stylesheet">
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -39,26 +38,12 @@ http://www.templatemo.com/tm-475-holiday
 					</a>
 				</li>
 				<li>
-					<a href="#">Dashboard</a>
+					<a href="#" id="publish">Publish</a>
 				</li>
 				<li>
-					<a href="#">Shortcuts</a>
+					<a href="#" id="preferences">Preferences</a>
 				</li>
-				<li>
-					<a href="#">Overview</a>
-				</li>
-				<li>
-					<a href="#">Events</a>
-				</li>
-				<li>
-					<a href="#">About</a>
-				</li>
-				<li>
-					<a href="#">Services</a>
-				</li>
-				<li>
-					<a href="#">Contact</a>
-				</li>
+				
 			</ul>
 		</div>
 		<!-- Header -->
@@ -84,75 +69,101 @@ http://www.templatemo.com/tm-475-holiday
 				</div>
 			</div>	  	
 		</div>
-		<div id="myModal" class="modal fade">
+		<div id="publishModal" class="modal fade">
 			<div id="form_wrapper" class="form_wrapper center-block">
 				<!-- Inscription -->
 				<div class="container">
-					
-					<div class="col-md-1 col-md-offset-6">
-						<form class="register">
-							<h3>Register</h3>
-							<div class="column">
-								<div>
-									<label>First Name:</label>
-									<input type="text" />
-								</div>
-								<div>
-									<label>Last Name:</label>
-									<input type="text" />
-								</div>
-								<div>
-									<label>Password (verification):</label>
-									<input type="password" />
-								</div>
-							</div>
-							<div class="column">
-								<div>
-									<label>Username:</label>
-									<input type="text"/>
-								</div>
-								<div>
-									<label>Email:</label>
-									<input type="text" />
-								</div>
-								<div>
-									<label>Password:</label>
-									<input type="password" />
-								</div>
-							</div>
-							<div class="bottom">
-								<input type="submit" value="Register" />
-								<a rel="login" class="linkform">
-									You have an account already? Log in here
-								</a>
-								<div class="clear"></div>
-							</div>
-						</form>
 
-						<form class="login active">
-							<h3>Login</h3>
-							<div>
-								<label>Username:</label>
-								<input type="text" />
-							</div>
-							<div>
-								<label>Password: 
+					<div class="row">
+						
+						<div class="col-lg-12">
+							<!-- Nav tabs -->
+							<div class="tm-home-box-research tm-home-box-1-center">
+								<ul class="nav nav-tabs tm-white-bg" role="tablist" id="hotelCarTabs">
 
-								</label>
-								<input type="password" />
-							</div>
-							<div class="bottom">
-								<div class="remember"><input type="checkbox" />
-									<span>Keep me logged in</span>
+									<li role="presentation" >
+										<a href="#car" aria-controls="car" role="tab" class="active">Research Travel</a>
+									</li>
+								</ul>
+
+								<!-- Tab panes -->
+								<div class="tab-content">
+
+									<div role="tabpanel" class="tab-pane fade tm-white-bg active in" id="car">
+										<div class="tm-search-box effect2">
+
+											<form action="#" method="post" class="hotel-search-form">
+
+												<div class="row tm-form-inner">
+
+													<div class="col-lg-6">
+														<div class="form-group">
+															<input placeholder="Départ" class="form-control" type="text" />
+														</div>
+
+														<div class="form-group">
+															<div class="row">
+																<div class="col-lg-6">
+																	<div class='input-group date' id='datetimepicker3'>
+																		<input type='text' class="form-control" placeholder="Pickup Date" />
+																		<span class="input-group-addon">
+																			<span class="fa fa-calendar"></span>
+																		</span>
+																	</div>
+																</div>
+																<div class="col-lg-6">
+																	<div class='input-group date-hour' id='datetimepicker3'>
+																		<input type='text'  class="form-control" placeholder="Pickup Hour" />
+																		<span class="input-group-addon">
+																			<span class="fa fa-calendar"></span>
+																		</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+														<div class="form-group">
+															<select class="form-control">
+																<option value=""> Frequency </option>
+																<option value="shangrila">Daily</option>
+																<option value="chatrium">Weekly</option>
+																<option value="fourseasons">Monthly</option>
+																<option value="hilton">Other</option>
+															</select> 
+														</div>
+														
+													</div>	
+													<div class="col-lg-6">
+														<div class="form-group">
+															<input placeholder="Destination" class="form-control" type="text" />
+														</div>
+														<div class="form-group">
+															<input placeholder="Passenger capacity" class="form-control" type="number" />
+														</div>
+														
+														<div class="form-group">
+															<input placeholder="Price" class="form-control" type="number" min="5"/>
+														</div>
+														
+														
+													</div>	
+
+													
+
+												</div>
+											
+
+
+												<div class="form-group tm-yellow-gradient-bg text-center">
+													<button type="submit" name="submit" class="tm-yellow-btn">Check Now</button>
+												</div>  
+											</form>
+										</div>
+									</div>				    
 								</div>
-								<input type="submit" value="Login"></input>
-								<a rel="register" class="linkform">
-									You don't have an account yet? Register here
-								</a>
-								<div class="clear"></div>
-							</div>
-						</form>
-						<!--End Col -->
+							</div>								
+
+						</div>
 					</div>
 
 					<!--End Container -->
@@ -532,11 +543,20 @@ http://www.templatemo.com/tm-475-holiday
 					<script type="text/javascript" src="js/templatemo-script.js"></script>      		<!-- Templatemo Script -->
 					<script>
 						$(function() {
-							
-							
+
+							$("#publish").click(function(e) {
+								$('#publishModal').modal('show');
+								e.preventDefault();
+
+							});
+
+							$("#publish").click(function(e) {
+								$('#preferencesModal').modal('show');
+								e.preventDefault();
+
+							});
 
 							$("#menu-toggle").click(function(e) {
-								$('#myModal').modal('show');
 								e.preventDefault();
 
 								$("#wrapper").toggleClass("toggled");
