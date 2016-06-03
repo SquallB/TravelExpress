@@ -925,10 +925,6 @@ hr { border-top: 1px solid #111010; }
 }
 
 
-.profile-edit{
-	margin-bottom: 10px;
-}
-
 
 
 /*!
@@ -1087,9 +1083,8 @@ hr { border-top: 1px solid #111010; }
 	padding-top: 20px;
 }
 #loggedName{
-	text-align: center;
-	text-transform: uppercase;
 
+	text-transform: uppercase;
 	border: none;
 	border-radius: 0;
 	color: #000;
