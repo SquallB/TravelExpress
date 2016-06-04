@@ -1,0 +1,173 @@
+
+/* Wrapper Style*/
+.form_wrapper{
+	background:#fff;
+	
+	width:350px;
+	margin:0 auto;
+	font-size:16px;
+	
+	position: fixed;
+
+}
+.modal{
+	position: fixed; 
+	 vertical-align: middle;
+	height: 100%;
+	top:25%;
+}
+.form_wrapper h3{
+	padding:20px 30px 20px 30px;
+	background-color:#444;
+	color:#fff;
+	font-size:25px;
+}
+
+.form_wrapper .container{
+	position: fixed;
+}
+
+body.modal-open .background-container{
+    -webkit-filter: blur(4px);
+    -moz-filter: blur(4px);
+    -o-filter: blur(4px);
+    -ms-filter: blur(4px);
+    filter: blur(4px);
+    /*filter: url("https://gist.githubusercontent.com/amitabhaghosh197/b7865b409e835b5a43b5/raw/1a255b551091924971e7dee8935fd38a7fdf7311/blur".svg#blur);*/
+filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='4');
+}
+
+.form_wrapper form{
+	display: block;
+	background:#fff;
+	width:550px;
+
+}
+
+form.register{
+	width:550px;
+}
+
+/*he columns in the registration form will be floating next to each other*/
+.form_wrapper .column{
+	width:47%;
+	float:left;
+}
+
+
+/* Links Style*/
+
+.form_wrapper a{
+	text-decoration:none;
+	color:#777;
+	font-size:12px;
+}
+.form_wrapper a:hover{
+	color:#000;
+}
+
+.form_wrapper .bottom a{
+	display:block;
+	clear:both;
+	padding:10px 30px;
+	text-align:right;
+	color:#ffa800;
+	text-shadow:1px 1px 1px #000;
+}
+.form_wrapper a.forgot{
+	float:right;
+	font-style:italic;
+	line-height:24px;
+	color:#ffa800;
+	text-shadow:1px 1px 1px #fff;
+}
+.form_wrapper a.forgot:hover{
+	color:#000;
+}
+
+/*Labels*/
+
+.form_wrapper label{
+	display:block;
+	padding:10px 30px 0px 30px;
+	margin:10px 0px 0px 0px;
+}
+
+
+/*Inputs style*/
+
+.form_wrapper input[type="text"],
+.form_wrapper input[type="password"]{
+	border: solid 1px #E5E5E5;
+	margin: 5px 30px 0px 30px;
+	padding: 9px;
+	display:block;
+	font-size:16px;
+	width:76%;
+	background: #FFFFFF;
+	background: 
+		-webkit-gradient(
+			linear, 
+			left top, 
+			left 25, 
+			from(#FFFFFF), 
+			color-stop(4%, #EEEEEE), 
+			to(#FFFFFF)
+		);
+	background: 
+		-moz-linear-gradient(
+			top, 
+			#FFFFFF,
+			#EEEEEE 1px, 
+			#FFFFFF 25px
+			);
+	-moz-box-shadow: 0px 0px 8px #f0f0f0;
+	-webkit-box-shadow: 0px 0px 8px #f0f0f0;
+	box-shadow: 0px 0px 8px #f0f0f0;
+}
+.form_wrapper input[type="text"]:focus,
+.form_wrapper input[type="password"]:focus{
+	background:#feffef;
+}
+
+
+.form_wrapper .bottom{
+	background-color:#444;
+	border-top:1px solid #ddd;
+	margin-top:20px;
+	clear:both;
+	color:#fff;
+	text-shadow:1px 1px 1px #000;
+}
+
+
+/*Submit button*/
+
+.form_wrapper input[type="submit"] {
+	background: #e3e3e3;
+	border: 1px solid #ccc;
+	color: #333;
+	font-family: "Trebuchet MS", "Myriad Pro", sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 8px 0 9px;
+	text-align: center;
+	width: 150px;
+	cursor:pointer;
+	float:right;
+	margin:15px 20px 10px 10px;
+	text-shadow: 0 1px 0px #fff;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	-moz-box-shadow: 0px 0px 2px #fff inset;
+	-webkit-box-shadow: 0px 0px 2px #fff inset;
+	box-shadow: 0px 0px 2px #fff inset;
+}
+.form_wrapper input[type="submit"]:hover {
+	background: #d9d9d9;
+	-moz-box-shadow: 0px 0px 2px #eaeaea inset;
+	-webkit-box-shadow: 0px 0px 2px #eaeaea inset;
+	box-shadow: 0px 0px 2px #eaeaea inset;
+	color: #222;
+}

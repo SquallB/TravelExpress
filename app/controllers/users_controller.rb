@@ -17,7 +17,8 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 		if @user.save
 			log_in @user
-			flash[:success] = "Welcome to Travel Express!"
+			flash[:success] = 'Welcome to Travel Express!'
+			respond_modal_with @user, location: root_path
 		else
 			render 'new'
 		end
