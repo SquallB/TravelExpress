@@ -1,5 +1,4 @@
-<%= form_for(:session, url: login_path, class: 'login active') do |f| %>
-	<h3>Login</h3>
+<%= form_for(:session, url: login_path) do |f| %>
 	<div>
 		<%= f.label :login, 'Username' %>
 		<%= f.text_field :login, class: 'form-control' %>
@@ -14,12 +13,8 @@
 				<%= f.check_box :remember_me %>
 				<span>Keep me logged in</span>
 			<% end %>
-			<span>Keep me logged in</span>
 		</div>
 		<%= f.submit "Log in" %>
-		<a rel="register" class="linkform">
-			You don't have an account yet? Register here
-		</a>
 		<div class="clear"></div>
 	</div>
 <% end %>

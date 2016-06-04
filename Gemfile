@@ -49,3 +49,4 @@ gem 'bcrypt-ruby', '3.1.1.rc1', :require => 'bcrypt'
 
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
+gem 'responders'

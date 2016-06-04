@@ -1,5 +1,8 @@
 class SessionsController < ApplicationController
+  respond_to :html, :json
+
   def new
+    respond_modal_with
   end
 
   def create

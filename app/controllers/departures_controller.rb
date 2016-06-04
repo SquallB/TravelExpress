@@ -29,10 +29,10 @@ class DeparturesController < ApplicationController
 		end
 
 		def start_address_params
-			params.require(:departure).permit(:start_time, :user_id)
+			params.require(:departure).permit(:start_line_1, :start_line_2, :start_city, :start_state, :start_zip)
 		end
 
-		def departure_params
-			params.require(:departure).permit(:start_time, :user_id)
+		def end_address_params
+			params.require(:departure).permit(:end_line_1, :end_line_2, :end_city, :end_state, :end_zip)
 		end
 end
