@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   respond_to :html, :json
 
   def new
-    respond_modal_with
+    respond_modal_with NIL
   end
 
   def create

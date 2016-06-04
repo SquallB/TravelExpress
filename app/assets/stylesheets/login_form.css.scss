@@ -2,20 +2,22 @@
 /* Wrapper Style*/
 .form_wrapper{
 	background:#fff;
-	
+
 	width:350px;
 	margin:0 auto;
 	font-size:16px;
-	
+
 	position: fixed;
 
 }
+
 .modal{
-	position: fixed; 
+	position: fixed;
 	 vertical-align: middle;
 	height: 100%;
 	top:25%;
 }
+
 .form_wrapper h3{
 	padding:20px 30px 20px 30px;
 	background-color:#444;
@@ -42,10 +44,6 @@ filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='4');
 	background:#fff;
 	width:550px;
 
-}
-
-form.register{
-	width:550px;
 }
 
 /*he columns in the registration form will be floating next to each other*/
