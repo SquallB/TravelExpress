@@ -1,5 +1,4 @@
 <% provide(:title, "Log in") %>
 
-<h3>Log in</h3>
 <%= render "login_form" %>
-<p>You don't have an account yet? <%= link_to "Register here", signup_path %></p>
+<p>You don't have an account yet? <%= link_to 'Sign up here', signup_path, data: { modal: true } %>

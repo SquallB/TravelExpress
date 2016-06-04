@@ -1,20 +1,24 @@
-<%= form_for(:session, url: login_path) do |f| %>
-	<div>
-		<%= f.label :login, 'Username' %>
-		<%= f.text_field :login, class: 'form-control' %>
-	</div>
-	<div>
-		<%= f.label :password %>
-		<%= f.password_field :password, class: 'form-control' %>
-	</div>
-	<div class="bottom">
-		<div class="remember">
-			<%= f.label :remember_me, class: "checkbox inline" do %>
-				<%= f.check_box :remember_me %>
-				<span>Keep me logged in</span>
-			<% end %>
-		</div>
-		<%= f.submit "Log in" %>
-		<div class="clear"></div>
-	</div>
-<% end %>
+<div class="container">
+  <div class="col-md-1 col-md-6">
+    <%= form_for(:session, url: login_path) do |f| %>
+      <div>
+        <%= f.label :login, 'Username' %>
+        <%= f.text_field :login, class: 'form-control' %>
+      </div>
+      <div>
+        <%= f.label :password %>
+        <%= f.password_field :password, class: 'form-control' %>
+      </div>
+      <div class="bottom">
+        <div class="remember">
+          <%= f.label :remember_me, class: 'checkbox inline' do %>
+            <%= f.check_box :remember_me %>
+            <span>Keep me logged in</span>
+          <% end %>
+        </div>
+        <%= f.submit 'Log in', class: 'btn btn-primary' %>
+        <div class="clear"></div>
+      </div>
+    <% end %>
+  </div>
+</div>

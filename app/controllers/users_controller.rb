@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 		if @user.save
 			log_in @user
 			flash[:success] = 'Welcome to Travel Express!'
-			respond_modal_with @user, location: root_path
+			redirect_to @user
 		else
 			render 'new'
 		end
@@ -47,7 +47,7 @@ class UsersController < ApplicationController
 	    def logged_in_user
 	      unless logged_in?
 	      	store_location
-	        flash[:danger] = "Please log in."
+	        flash[:danger] = 'Please log in.'
 	        redirect_to login_url
 	      end
 	    end

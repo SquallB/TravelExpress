@@ -1,4 +1,4 @@
-/** 
+/**
  * Holiday Template
  * http://www.templatemo.com/tm-475-holiday
  *
@@ -7,9 +7,9 @@
  *
  */
 
-/* CSS Resets */ 
+/* CSS Resets */
 ul,p {
-	margin: 0; 
+	margin: 0;
 	padding: 0;
 }
 h1,h2,h3 {
@@ -95,7 +95,7 @@ body { overflow-x: hidden; }
 .tm-banner-subtitle {
 	color: white;
 }
-.tm-banner-title {	
+.tm-banner-title {
 	font-size: 74px;
 	font-weight: 600;
 }
@@ -271,12 +271,12 @@ body { overflow-x: hidden; }
 	border: none;
 	background: #F9E58B;
 }
-#hotelCarTabs > li.active > a, 
-#hotelCarTabs > li.active > a:focus, 
+#hotelCarTabs > li.active > a,
+#hotelCarTabs > li.active > a:focus,
 #hotelCarTabs > li.active > a:hover
 {
 	background: transparent;
-	border: none;	
+	border: none;
 }
 /* Footer */
 .tm-black-bg { background-color: #000; }
@@ -330,7 +330,7 @@ hr { border-top: 1px solid #111010; }
 .tm-home-box-2-link {
 	display: inline-block;
 	height: 100%;
-	color: black;	
+	color: black;
 	transition: all 0.3s ease;
 	text-align: center;
 }
@@ -402,7 +402,7 @@ hr { border-top: 1px solid #111010; }
 .gray-text { color: #B1B1B1; }
 .tours-1-description { line-height: 1.8; }
 .tm-tours-box-1-link { overflow: hidden }
-.tm-tours-box-1-link-left { 
+.tm-tours-box-1-link-left {
 	background-color: #1CA7C8;
 	padding: 20px 30px;
 	float: left;
@@ -482,7 +482,7 @@ hr { border-top: 1px solid #111010; }
 }
 .tm-about-box-1-img:hover,
 .tm-about-box-1-img:focus {
-	border: 5px solid #E8BA0F;	
+	border: 5px solid #E8BA0F;
 }
 .tm-about-box-1-title {
 	font-size: 17px;
@@ -571,14 +571,14 @@ hr { border-top: 1px solid #111010; }
   font-size: 14px;
   line-height: 18px;
 }
-.flexslider.flexslider-banner .slides img { 
+.flexslider.flexslider-banner .slides img {
 	display: block;
-	width: 100%; 
+	width: 100%;
 }
 .flexslider {
 	border: none;
 	border-radius: 0;
-	margin: 0 auto;	
+	margin: 0 auto;
 	width: 100%;
 }
 .flexslider.flexslider-about {
@@ -611,8 +611,8 @@ hr { border-top: 1px solid #111010; }
 	background-color: #F4F4F4;
 	padding: 40px;
 }
-.contact-image { 
-	float: left; 
+.contact-image {
+	float: left;
 	widthh: 100%;
 	max-width: 494px;
 }
@@ -622,7 +622,7 @@ hr { border-top: 1px solid #111010; }
 	max-width: 550px;
 	width: 100%;
 }
-.effect2-contact::before, 
+.effect2-contact::before,
 .effect2-contact::after {
 	max-width: 550px;
 }
@@ -665,7 +665,7 @@ hr { border-top: 1px solid #111010; }
 .profile-img{
 	margin-top: 3%;
 	margin-left: 4%;
-	
+
 
 }
 
@@ -696,18 +696,18 @@ hr { border-top: 1px solid #111010; }
 		height: auto;
 	}
 	.tm-about-box-2-text { max-width: 360px; }
-	.flex-caption {	
-		padding: 25px; 
+	.flex-caption {
+		padding: 25px;
 		max-width: 500px;
 	}
 	.flexslider.flexslider-about .slides img {
 		max-width: 450px;
 	}
 	.slider-title {
-		margin-bottom: 15px; 
+		margin-bottom: 15px;
 	}
-	.slider-subtitle { 
-		margin-bottom: 20px;	
+	.slider-subtitle {
+		margin-bottom: 20px;
 	}
 	.slider-description {
 		margin-bottom: 20px;
@@ -716,7 +716,7 @@ hr { border-top: 1px solid #111010; }
 	.tm-contact-box-1 {	padding: 30px; }
 	.contact-image { max-width: 450px; }
 	.contact-text {	max-width: 400px; }
-	.flexslider.flexslider-about .slides img { width: 450px;	}	
+	.flexslider.flexslider-about .slides img { width: 450px;	}
 }
 
 @media screen and (max-width: 1199px) and (min-width: 992px) {
@@ -767,12 +767,12 @@ hr { border-top: 1px solid #111010; }
 	    height: auto;
 	}
 	.flexslider.flexslider-about,
-	.flexslider.flexslider-about .slides img, 
+	.flexslider.flexslider-about .slides img,
 	.flex-caption {
 		max-width: 528px;
 		width: 100%;
 	}
-	.flexslider .slides img, 
+	.flexslider .slides img,
 	.flex-caption {
 		width: 100%;
 	}
@@ -785,7 +785,7 @@ hr { border-top: 1px solid #111010; }
 }
 
 @media screen and (max-width: 767px) {
-	
+
 	/* http://www.impressivewebs.com/animate-display-block-none/
 	 * Comment by Jon Christensen
 	 */
@@ -843,7 +843,7 @@ hr { border-top: 1px solid #111010; }
 		max-width: 300px;
 		padding: 30px;
 	}
-	.tm-about-box-2-img, 
+	.tm-about-box-2-img,
 	.tm-about-box-2-text {
 		float: none;
 	}
@@ -857,7 +857,7 @@ hr { border-top: 1px solid #111010; }
     	font-size: 30px;
 	}
 	.tm-banner-subtitle { font-size: 16px; }
-	.tm-banner-link { 
+	.tm-banner-link {
 		padding: 10px 25px;
 	}
 	.tm-home-section-1 { top: 0; }
@@ -891,11 +891,11 @@ hr { border-top: 1px solid #111010; }
 		border-right: none;
 		border-bottom: 1px solid #B1B1B1;
 		padding-right: 0;
-		padding-bottom: 30px;	
+		padding-bottom: 30px;
 	}
 	.tm-tours-box-1-info-right {
 		padding-left: 0;
-		padding-top: 30px;		
+		padding-top: 30px;
 	}
 	.tm-tours-box-1-link-left,
 	.tm-tours-box-1-link-right {

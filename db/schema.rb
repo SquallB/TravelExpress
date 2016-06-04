@@ -25,15 +25,16 @@ ActiveRecord::Schema.define(version: 20160601015633) do
 
   create_table "departures", force: :cascade do |t|
     t.datetime "start_time"
-    t.integer  "start_address_id", limit: 4
-    t.integer  "end_address_id",   limit: 4
-    t.integer  "user_id",          limit: 4
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.integer  "passenger_capacity", limit: 4
+    t.string   "frequency",          limit: 255
+    t.float    "price",              limit: 24
+    t.integer  "start_address_id",   limit: 4
+    t.integer  "end_address_id",     limit: 4
+    t.integer  "user_id",            limit: 4
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
-  add_index "departures", ["end_address_id"], name: "index_departures_on_end_address_id", using: :btree
-  add_index "departures", ["start_address_id"], name: "index_departures_on_start_address_id", using: :btree
   add_index "departures", ["user_id"], name: "index_departures_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
@@ -49,7 +50,5 @@ ActiveRecord::Schema.define(version: 20160601015633) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
-  add_foreign_key "departures", "addresses", column: "end_address_id"
-  add_foreign_key "departures", "addresses", column: "start_address_id"
   add_foreign_key "departures", "users"
 end

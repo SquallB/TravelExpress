@@ -9,4 +9,5 @@
     <%= link_to 'Sign up', signup_path, data: { modal: true }, class: 'btn btn-primary' %>
     <%= link_to 'Log in', login_path, data: { modal: true }, class: 'btn btn-primary' %>
 	<% end %>
+  <%= link_to 'Publish travel', { :controller => :departures, :action => :new }, data: { modal: true }, class: 'btn btn-primary' %>
 </p>

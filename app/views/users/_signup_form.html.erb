@@ -1,42 +1,40 @@
-<div id="form_wrapper" class="form_wrapper center-block">
-  <div class="container">
-    <div class="col-md-1 col-md-6">
-      <%= form_for :user, url: users_path, remote: request.xhr?, html: { data: { modal: true } } do |f| %>
-        <div class="column">
-          <div>
-            <%= f.label :first_name %><br>
-            <%= f.text_field :first_name, class: 'form-control' %>
-          </div>
-          <div>
-            <%= f.label :login, 'Username' %><br>
-            <%= f.text_field :login, class: 'form-control' %>
-          </div>
-          <div>
-            <%= f.label :password %><br>
-            <%= f.password_field :password, class: 'form-control' %>
-          </div>
+<div class="container">
+  <div class="col-md-1 col-md-6">
+    <%= form_for :user, url: users_path do |f| %>
+      <div class="column">
+        <div>
+          <%= f.label :first_name %><br>
+          <%= f.text_field :first_name, class: 'form-control' %>
+        </div>
+        <div>
+          <%= f.label :login, 'Username' %><br>
+          <%= f.text_field :login, class: 'form-control' %>
+        </div>
+        <div>
+          <%= f.label :password %><br>
+          <%= f.password_field :password, class: 'form-control' %>
+        </div>
 
+      </div>
+      <div class="column">
+        <div>
+          <%= f.label :last_name %><br>
+          <%= f.text_field :last_name, class: 'form-control' %>
         </div>
-        <div class="column">
-          <div>
-            <%= f.label :last_name %><br>
-            <%= f.text_field :last_name, class: 'form-control' %>
-          </div>
 
-          <div>
-            <%= f.label :email %><br>
-            <%= f.text_field :email, class: 'form-control' %>
-          </div>
-          <div>
-            <%= f.label :password_confirmation, 'Confirmation' %><br>
-            <%= f.password_field :password_confirmation, class: 'form-control' %>
-          </div>
+        <div>
+          <%= f.label :email %><br>
+          <%= f.text_field :email, class: 'form-control' %>
         </div>
-        <div class="bottom">
-          <%= f.submit 'Sign up', class: 'btn btn-primary' %>
-          <div class="clear"></div>
+        <div>
+          <%= f.label :password_confirmation, 'Confirmation' %><br>
+          <%= f.password_field :password_confirmation, class: 'form-control' %>
         </div>
-      <% end %>
-    </div>
+      </div>
+      <div class="bottom">
+        <%= f.submit 'Sign up', class: 'btn btn-primary' %>
+        <div class="clear"></div>
+      </div>
+    <% end %>
   </div>
 </div>

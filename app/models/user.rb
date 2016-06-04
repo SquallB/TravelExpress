@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
 	attr_accessor :remember_token
+	has_many :departures, :class_name => 'Departure'
 
 	before_save { self.email = email.downcase }
 	validates :login,  presence: true, length: { maximum: 50 }

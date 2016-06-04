@@ -1,5 +1,7 @@
 <% provide(:title, 'Sign up') %>
 
-<%= render "signup_form" %>
+<%= render 'shared/error_messages' %>
 
-<%= link_to 'Back', root_path %>
+<%= render 'signup_form' %>
+
+You have an account already? <%= link_to 'Log in here', login_path, data: { modal: true } %>
