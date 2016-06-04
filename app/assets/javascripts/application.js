@@ -16,3 +16,15 @@
 //= require bootstrap-sprockets
 //= require bootstrap-datepicker
 //= require_tree .
+
+$(window).load(function(){
+    // Flexsliders
+    $('.flexslider.flexslider-banner').flexslider({
+        controlNav: false
+    });
+    $('.flexslider').flexslider({
+        animation: "slide",
+        directionNav: false,
+        slideshow: false
+    });
+});
