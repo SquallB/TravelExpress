@@ -16,37 +16,7 @@
 	<div class="supreme-container">
 		<%= render 'layouts/header' %>
 
-    <section class="tm-banner">
-      <!-- Flexslider -->
-      <div class="flexslider flexslider-banner">
-        <ul class="slides">
-          <li>
-            <div class="tm-banner-inner">
-              <h1 class="tm-banner-title"><span class="tm-yellow-text">Tour</span> Packages</h1>
-              <p class="tm-banner-subtitle">For Your Vacations</p>
-              <a href="#more"  class="tm-banner-link">Learn More</a>
-            </div>
-            <%= image_tag "banner-3.jpg" %>
-          </li>
-          <li>
-            <div class="tm-banner-inner">
-              <h1 class="tm-banner-title">Lorem <span class="tm-yellow-text">Ipsum</span> Dolor</h1>
-              <p class="tm-banner-subtitle">Wonderful Destinations</p>
-              <a href="#more" class="tm-banner-link">Learn More</a>
-            </div>
-            <%= image_tag "banner-2.jpg" %>
-          </li>
-          <li>
-            <div class="tm-banner-inner">
-              <h1 class="tm-banner-title">Proin <span class="tm-yellow-text">Gravida</span> Nibhvell</h1>
-              <p class="tm-banner-subtitle">Velit Auctor</p>
-              <a href="#more" class="tm-banner-link">Learn More</a>
-            </div>
-            <%= image_tag "banner-1.jpg" %>
-          </li>
-        </ul>
-      </div>
-    </section>
+    <%= render 'layouts/flexslider' %>
 
 		<div id="main-container" class="container">
 			<% flash.each do |message_type, message| %>

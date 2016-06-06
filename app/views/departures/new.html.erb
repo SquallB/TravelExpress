@@ -49,7 +49,7 @@
                   </div>
                   <div class="col-lg-6">
                     <div class="form-group">
-                      <%= f.label :end_address, 'Drop address' %>
+                      <%= f.label :end_address, 'Drop-off address' %>
                       <%= f.fields_for :end_address  do |end_address_form| %>
                           <%= end_address_form.text_field :line1, placeholder: 'Address line 1', class: 'form-control' %>
                           <%= end_address_form.text_field :line2, placeholder: 'Address line 2', class: 'form-control' %>
@@ -59,7 +59,7 @@
                       <% end %>
                     </div>
                     <div class="form-group">
-                      <%= f.text_field :passenger_capacity, placeholder: 'Passenger capacity', class: 'form-control', type: 'number' %>
+                      <%= f.text_field :passenger_capacity, placeholder: 'Number of passengers', class: 'form-control', type: 'number' %>
                     </div>
                     <div class="form-group">
                       <%= f.text_field :price, placeholder: 'Price', class: 'form-control', type: 'number', min: '5' %>

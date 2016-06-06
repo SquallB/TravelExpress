@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160601015633) do
+ActiveRecord::Schema.define(version: 20160605235410) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "line1",      limit: 255
@@ -36,6 +36,15 @@ ActiveRecord::Schema.define(version: 20160601015633) do
   end
 
   add_index "departures", ["user_id"], name: "index_departures_on_user_id", using: :btree
+
+  create_table "departures_searches", force: :cascade do |t|
+    t.string   "start_city", limit: 255
+    t.string   "end_city",   limit: 255
+    t.string   "start_date", limit: 255
+    t.integer  "passengers", limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "login",           limit: 255

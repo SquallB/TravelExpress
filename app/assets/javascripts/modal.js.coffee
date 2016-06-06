@@ -4,6 +4,7 @@ $ ->
   modal_selector = '.modal'
 
   $(document).on 'click', 'a[data-modal]', ->
+    $('.modal-backdrop').remove()
     location = $(this).attr('href')
     #Load modal dialog from server
     $.get location, (data)->
