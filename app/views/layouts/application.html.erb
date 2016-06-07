@@ -14,9 +14,9 @@
   <div id="modal-holder"></div>
 
 	<div class="supreme-container">
+    <%= yield :sidebar %>
 		<%= render 'layouts/header' %>
-
-    <%= render 'layouts/flexslider' %>
+    <%= yield :before_main %>
 
 		<div id="main-container" class="container">
 			<% flash.each do |message_type, message| %>

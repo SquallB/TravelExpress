@@ -1,0 +1,18 @@
+
+    <div id="sidebar-wrapper">
+      <ul class="sidebar-nav ">
+        <li class="sidebar-brand tm-yellow-text">
+          <a href="#" >
+            Profile Management
+          </a>
+        </li>
+        <li>
+          <%= link_to 'Publish travel', { :controller => :departures, :action => :new }, data: { modal: true } %>
+        </li>
+        <li>
+          <a href="#" id="preferences">Preferences</a>
+        </li>
+
+      </ul>
+    </div>
+

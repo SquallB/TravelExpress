@@ -1,4 +1,4 @@
-<a  href="#"><img src="img/about-4.jpg" alt="img" class="tm-about-box-1-img"></a>
+<a  href="#"><%= image_tag 'about-4.jpg', alt:'img', class:'img-responsive tm-about-box-1-img' %></a>
 <h3 class="tm-about-box-1-title"> <% if logged_in? %> <%= @current_user.first_name %> <%= @current_user.last_name %><% else %>
  Thomas <% end %><span>( Founder )</span></h3>
 <p class="margin-bottom-15 gray-text"></p>

@@ -1,13 +1,7 @@
+<% content_for :before_main do %>
+  <%= render 'layouts/flexslider' %>
+<% end %>
+
 <section class="container tm-home-section-1 section-margin-top">
   <%= render 'departures/search_form' %>
 </section>
-
-<p>
-	<% if logged_in? %>
-		<%= link_to "Log out", logout_path, method: "delete" %>
-	<% else %>
-    <%= link_to 'Sign up', signup_path, data: { modal: true }, class: 'btn btn-primary' %>
-    <%= link_to 'Log in', login_path, data: { modal: true }, class: 'btn btn-primary' %>
-	<% end %>
-  <%= link_to 'Publish travel', { :controller => :departures, :action => :new }, data: { modal: true }, class: 'btn btn-primary' %>
-</p>

@@ -1,15 +1,26 @@
 <div class="row loggedStatusRow" id="loggedStatus">
+  <% if logged_in? %>
+      <div class="col-lg-4">
+        <a  href="#"><%= image_tag 'about-4.jpg', alt:'img', class:'img-responsive' %></a>
+      </div>
 
-  <div class="col-lg-4">
-    <a  href="#"><img src="img/about-4.jpg" class="img-responsive" alt="img" ></a>
-  </div>
+      <div class="col-lg-4 loggedStatusName text-center" >
+        <a href="#car" id="loggedName"><%= current_user.first_name %></a>
 
-  <div class="col-lg-4 loggedStatusName text-center" >
-    <a href="#car" id="loggedName"><%= current_user.first_name %></a>
-    <a href="#car" id="loggedName">credit: 500$</a>
-  </div>
+        <a href="#car" id="loggedName">credit: 500$</a>
+        <%= link_to "", logout_path, method: 'delete', class: 'glyphicon glyphicon-log-out' %>
+      </div>
 
-  <div class="col-lg-4">
-    <a href="#" id="menu-toggle" class="tm-home-box-2-link profile-edit"><i class="fa fa-edit tm-home-box-2-icon border-left"></i></a>
-  </div>
+      <div class="col-lg-4">
+        <a href="#" id="menu-toggle" class="tm-home-box-2-link profile-edit"><i class="fa fa-edit tm-home-box-2-icon border-left"></i></a>
+      </div>
+
+
+  <% else %>
+      <%= link_to 'Sign up', signup_path, data: { modal: true }, class: 'btn btn-primary', id: 'loggedName' %>
+      <%= link_to '', login_path, data: { modal: true }, class: 'btn btn-primary glyphicon glyphicon-log-in' %>
+  <% end %>
+
+
+
 </div>
