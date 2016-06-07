@@ -31,6 +31,15 @@ class DeparturesController < ApplicationController
 		end
 	end
 
+  def search
+		results = Departure.search(params[:start_city], params[:end_city], params[:start_date_date], params[:start_date_time], params[:passengers])
+		if results.any?
+			@departures = results.all
+		else
+			@departures = []
+		end
+	end
+
 	private
 		def departure_params
 			params.require(:departure).permit(:passenger_capacity, :frequency, :price)
