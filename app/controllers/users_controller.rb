@@ -38,6 +38,16 @@ class UsersController < ApplicationController
 	    end
 	end
 
+	def profile
+
+		results = Departure.where(:user_id => session[:user_id])
+		if results.any?
+			@departures = results.all
+		else
+			@departures = []
+		end
+	end
+
 	private
 		def user_params
 			params.require(:user).permit(:login, :first_name, :last_name, :password, :password_confirmation, :email)

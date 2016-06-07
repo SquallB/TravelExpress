@@ -1,0 +1,26 @@
+<% if @departures.any?
+     @departures.each do |departure| %>
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-xxs-12">
+      <div class="tm-home-box-2">
+        <%= image_tag 'tours-06.jpg', alt:'image', class:'img-responsive' %>
+        <h3><%= departure.start_address.city %> to <%= departure.end_address.city %></h3>
+        <p class="tm-date"><% if departure.start_time %> <%= departure.start_time.strftime('%d/%m/%Y at %H:%M') %><% end %></p>
+        <div class="tm-home-box-2-container">
+          <div class="row">
+            <div class="col-lg-2">
+              <a href="#" class="tm-home-box-2-link"><i class="fa fa-heart tm-home-box-2-icon border-right"></i></a>
+            </div>
+            <div class="col-lg-6 vcenter">
+              <a href="#" class="tm-home-box-2-link "><span class="tm-home-box-2-description ">Travel</span></a>
+            </div>
+            <div class="col-lg-2">
+              <a href="#" class="tm-home-box-2-link"><i class="fa editTravel fa-edit tm-home-box-2-icon border-left"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end
+       else %>
+    <p>No departures found.</p>
+<% end %>
