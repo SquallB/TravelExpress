@@ -79,15 +79,20 @@ class DeparturesController < ApplicationController
 			departures_passengers.passengers_number = passengers_number
 
 			if departures_passengers.save
+
 				flash.now[:success] = 'Your travel is successfully booked'
+				@payment = nil
+				respond_modal_with @payment
 			else
 				flash.now[:danger] = 'Couldn\'t book the travel'
+				redirect_to @departure
 			end
 		else
 			flash.now[:danger] = 'Not enough seats in order to book the travel'
+			redirect_to @departure
 		end
 
-		redirect_to @departure
+
 	end
 
 	private

@@ -28,7 +28,8 @@
                     <%= select_tag :passengers_number, options_for_select(1..@current_capacity, params[:passengers_number]), class: 'form-control' %>
                   </div>
                   <div class="col-lg-1">
-                    <%= submit_tag 'Book', class: 'btn btn-primary' %>
+                    <%= link_to 'Book',payment_path, class: 'btn btn-primary', data: { modal: true } %>
+
                   </div>
                 </div>
               </div>
