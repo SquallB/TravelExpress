@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get    'departures/search'    =>  'departures#search'
   post   'departures/:id/book'  =>  'departures#book'
   get    'profile'              =>  'users#profile'
-  get    'preferences'        => 'users#preferences'
+  get    'preferences'          =>  'users#preferences'
   post   'login'                =>  'sessions#create'
   delete 'logout'               =>  'sessions#destroy'
   resources :users
