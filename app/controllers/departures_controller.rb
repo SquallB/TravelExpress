@@ -1,5 +1,5 @@
 class DeparturesController < ApplicationController
-	before_action :logged_in_user, only: [:new, :create, :edit, :update, :book]
+	before_action :logged_in_user, only: [:new, :create, :edit, :update, :book, :payment]
 	respond_to :html, :json
 
 	def index
@@ -81,8 +81,7 @@ class DeparturesController < ApplicationController
 			if departures_passengers.save
 
 				flash.now[:success] = 'Your travel is successfully booked'
-				@payment = nil
-				respond_modal_with @payment
+				redirect_to payment_path
 			else
 				flash.now[:danger] = 'Couldn\'t book the travel'
 				redirect_to @departure
@@ -91,8 +90,13 @@ class DeparturesController < ApplicationController
 			flash.now[:danger] = 'Not enough seats in order to book the travel'
 			redirect_to @departure
 		end
+	end
 
-
+  def payment
+		if params[:card_number]
+			flash[:success] = 'Your payment was accepted.'
+			redirect_to root_path
+		end
 	end
 
 	private

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get    'profile'              =>  'users#profile'
   get    'preferences'          =>  'users#preferences'
   get    'payment'              =>  'departures#payment'
+  post    'payment'              =>  'departures#payment'
   post   'login'                =>  'sessions#create'
   delete 'logout'               =>  'sessions#destroy'
   resources :users
