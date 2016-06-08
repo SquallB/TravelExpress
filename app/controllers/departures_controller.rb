@@ -20,7 +20,15 @@ class DeparturesController < ApplicationController
 	def create
 		@departure = Departure.new(departure_params)
 		@departure.user_id = session[:user_id]
-		@departure.start_time = params[:departure][:start_time_date].gsub('/', '-') + ' ' + params[:departure][:start_time_time] + ':00'
+		hour = params[:departure][:start_time_hour]
+		if hour.length == 1
+			hour = "0#{hour}"
+		end
+		min = params[:departure][:start_time_min]
+		if min.length == 1
+			min = "0#{min}"
+		end
+		@departure.start_time = "#{params[:departure][:start_time_date].gsub('/', '-')} #{hour}:#{min}:00"
 		@departure.start_address = Address.new(start_address_params)
 		@departure.end_address = Address.new(end_address_params)
 
@@ -32,9 +40,16 @@ class DeparturesController < ApplicationController
 	end
 
   def search
-		if params[:start_time_date] && params[:start_time_time]
-			date_parts = params[:start_time_date].split('/')
-			start_time = "#{date_parts[2]}-#{date_parts[0]}-#{date_parts[1]} #{params[:start_time_time]}:00"
+		if params[:start_time_date]
+			hour = params[:start_time_hour]
+			if hour.length == 1
+				hour = "0#{hour}"
+			end
+			min = params[:start_time_min]
+			if min.length == 1
+				min = "0#{min}"
+			end
+			start_time = "#{params[:start_time_date].gsub('/', '-')} #{hour}:#{min}:00"
 		end
 		results = Departure.search(params[:start_city], params[:end_city], start_time, params[:passengers])
 		if results.any?

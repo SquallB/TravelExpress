@@ -1,5 +1,7 @@
 <% provide(:title, 'Publish Travel') %>
 
+<%= render 'error_messages' %>
+
 <div class="container">
   <div class="row">
     <div class="col-lg-12">
@@ -29,22 +31,20 @@
                             <%= f.text_field :start_time_date, placeholder: 'Pickup Date', class: 'form-control', 'data-provide' => 'datepicker' %>
                           </div>
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-3">
                           <div class='input-append date-hour form_datetime_hour'>
-                            <%= f.text_field :start_time_time, placeholder: 'Pickup Hour', class: 'form-control datepicker_hour' %>
-                            <span class="add-on"><i class="icon-th"></i></span>
+                            <%= f.select :start_time_hour, 0..23, {}, class: 'form-control' %>
+                          </div>
+                        </div>
+                        <div class="col-lg-3">
+                          <div class='input-append date-hour form_datetime_hour'>
+                            <%= f.select :start_time_min, [00, 15, 30, 45], {}, class: 'form-control' %>
                           </div>
                         </div>
                       </div>
                     </div>
                     <div class="form-group">
-                      <select class="form-control">
-                        <option value="">--Frequency--</option>
-                        <option value="daily">Daily</option>
-                        <option value="weekly">Weekly</option>
-                        <option value="monthly">Monthly</option>
-                        <option value="other">Other</option>
-                      </select>
+                      <%= f.select :frequency, ['--Frequency--', 'One time', 'Daily', 'Monthly', 'Other'], {}, class: 'form-control' %>
                     </div>
                   </div>
                   <div class="col-lg-6">

@@ -10,14 +10,15 @@
     <% if @departures.any?
        @departures.each do |departure| %>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-          <div class="tm-tours-box-1">
+          <div class="text-center tm-tours-box-1">
             <%= link_to image_tag('tours-06.jpg', alt:'image', class:'img-responsive'), departure %>
             <%=  %>
             <div class="tm-tours-box-1-info">
               <div class="tm-tours-box-1-info-left">
-                <p class="text-uppercase margin-bottom-20"><%= departure.start_address.city %></p>
-                <p class="text-uppercase margin-bottom-20"><%= departure.end_address.city %></p>
-                <% if departure.start_time %><p class="gray-text"><%= departure.start_time.strftime('%d/%m/%Y at %H:%M') %></p><% end %>
+                <p class="text-center text-uppercase"><%= departure.start_address.city %></p>
+                <p class="text-center"><span class="glyphicon glyphicon-arrow-down"></span></p>
+                <p class="text-center text-uppercase margin-bottom-20"><%= departure.end_address.city %></p>
+                <% if departure.start_time %><p class="gray-text"><%= departure.start_time.strftime('%m/%d/%Y at %H:%M') %></p><% end %>
               </div>
               <div class="tm-tours-box-1-info-right">
                 <p class="gray-text tours-1-description"><%= departure.passenger_capacity %> passengers</p>

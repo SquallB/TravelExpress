@@ -6,6 +6,13 @@ class Departure < ActiveRecord::Base
   belongs_to :start_address, :class_name => 'Address'
   belongs_to :end_address, :class_name => 'Address'
 
+  validates :start_time,  presence: true
+  validates :user,  presence: true
+  validates :start_address,  presence: true
+  validates :end_address,  presence: true
+  validates :passenger_capacity,  numericality: true
+  validates :price,  numericality: true
+
   def self.search(start_city, end_city, start_time, passengers)
     if start_city && end_city
       joins('INNER JOIN addresses AS start_address ON start_address.id = departures.start_address_id
