@@ -6,15 +6,16 @@
           <%= @departure.start_address.city %> <span class="glyphicon glyphicon-arrow-right"></span> <%= @departure.end_address.city %>
         </h2>
         <% if @departure.start_time %>
-            <h3 class="slider-subtitle gray-text"><%= @departure.start_time.strftime('%m/%d/%Y at %H:%M') %></h3>
+            <h3 class="slider-subtitle gray-text">Pick-up time : <%= @departure.start_time.strftime('%m/%d/%Y at %H:%M') %></h3>
         <% end %>
+        <h3 class="margin-bottom-15">Travel of : <%= link_to "#{@departure.user.first_name} #{@departure.user.last_name}", @departure.user %></h3>
         <div class="row">
           <div class="col-lg-6">
-            <h5>Pick-up address</h5>
+            <h4>Pick-up address :</h4>
             <%= render :partial => 'shared/address', :locals => {:address => @departure.start_address} %>
           </div>
           <div class="col-lg-6">
-            <h5>Drop-off address</h5>
+            <h4>Drop-off address :</h4>
             <%= render :partial => 'shared/address', :locals => {:address => @departure.end_address} %>
           </div>
         </div>

@@ -75,7 +75,7 @@ class DeparturesController < ApplicationController
 		if (current_capacity - passengers_number) >= 0
 			departures_passengers = DeparturesPassengers.new
 			departures_passengers.departure_id = @departure.id
-			departures_passengers.user_id = session[':user_id']
+			departures_passengers.user_id = session[:user_id]
 			departures_passengers.passengers_number = passengers_number
 
 			if departures_passengers.save

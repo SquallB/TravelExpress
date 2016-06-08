@@ -1,10 +1,4 @@
-<a  href="#"><%= image_tag 'about-4.jpg', alt:'img', class:'img-responsive tm-about-box-1-img' %></a>
-<h3 class="tm-about-box-1-title"> <% if logged_in? %> <%= @current_user.first_name %> <%= @current_user.last_name %><% else %>
- Thomas <% end %><span>( Founder )</span></h3>
-<p class="margin-bottom-15 gray-text"></p>
-<div class="gray-text">
-  <a href="#" class="tm-social-icon"><i class="fa fa-twitter"></i></a>
-  <a href="#" class="tm-social-icon"><i class="fa fa-facebook"></i></a>
-  <a href="#" class="tm-social-icon"><i class="fa fa-pinterest"></i></a>
-  <a href="#" class="tm-social-icon"><i class="fa fa-google-plus"></i></a>
-</div>
+<%= image_tag 'about-4.jpg', alt:'img', class:'img-responsive tm-about-box-1-img' %>
+<h3 class="tm-about-box-1-title"><%= user.first_name %> <%= user.last_name %></h3>
+<p class="margin-bottom-15 gray-text"><%= user.email %></p>
+<p class="margin-bottom-15 gray-text">Registered on : <%= user.created_at.strftime('%m/%d/%Y') %></p>

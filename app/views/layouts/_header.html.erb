@@ -1,8 +1,8 @@
 <div class="tm-header">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-2 col-md-2 col-sm-2 tm-site-name-container">
-				<a href="#" class="tm-site-name">Holiday</a>	
+			<div class="col-lg-3 col-md-3 col-sm-3 tm-site-name-container">
+				<a href="#" class="tm-site-name">Travel Express</a>
 			</div>
 			<div class="col-lg-6 col-md-8 col-sm-8">
 				<div class="mobile-menu-icon">
@@ -10,10 +10,10 @@
 				</div>
 				<nav class="tm-nav">
 					<ul>
-						<li><a href="index.html" class="active">Home</a></li>
-						<li><a href="about.html">About</a></li>
-						<li><a href="tours.html">Our Tours</a></li>
-						<li><a href="contact.html">Contact</a></li>
+						<li><%= link_to 'Home', root_path %></li>
+						<li><%= link_to 'About', about_path %></li>
+						<li><%= link_to 'Travels', departures_path %></li>
+						<li><%= link_to 'Contact', contact_path %></li>
 					</ul>
 				</nav>
 			</div>

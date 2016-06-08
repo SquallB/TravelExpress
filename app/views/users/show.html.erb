@@ -1,1 +1,1 @@
-<%= @user.first_name %> <%= @user.last_name %>, <%= @user.email %>
+<%= render :partial => 'user_page', :locals => {:user => @user, :departures => @departures} %>

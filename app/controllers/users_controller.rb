@@ -12,6 +12,12 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
+		results = Departure.where(:user_id => session[:user_id])
+		if results.any?
+			@departures = results.all
+		else
+			@departures = []
+		end
 	end
 
 	def new
@@ -45,6 +51,12 @@ class UsersController < ApplicationController
 	end
 
 	def profile
+    results = Departure.joins(:departures_passengers).where("departures_passengers.user_id = #{session[:user_id]}")
+    if results.any?
+      @user_departures = results.all
+    else
+      @user_departures = []
+    end
 
 		results = Departure.where(:user_id => session[:user_id])
 		if results.any?
