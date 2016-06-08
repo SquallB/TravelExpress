@@ -5,19 +5,22 @@
 
 
       <div class="row">
-        <div class="col-lg-12">
           <div class="modal-content">
+            <% if content_for? :title %>
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal">
                 <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
               </button>
-              <h4 class="modal-title" id="mainModalLabel">
-                <%= yield :title if content_for? :title %>&nbsp;
-              </h4>
+
+                <h4 class="modal-title" id="mainModalLabel">
+                  <%= yield :title %>&nbsp;
+                </h4>
+
             </div>
+            <% end %>
             <%= yield %>
           </div>
-        </div>
+
       </div>
 
     </div>

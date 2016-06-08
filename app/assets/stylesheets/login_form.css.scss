@@ -7,27 +7,29 @@
 	margin:0 auto;
 	font-size:16px;
 
-	position: fixed;
+
 
 }
 
 .modal{
 	position: fixed;
-	 vertical-align: middle;
+    vertical-align: middle;
 	height: 100%;
 	top:25%;
 }
 
+
+.login{
+  width:100%;
+}
 .form_wrapper h3{
 	padding:20px 30px 20px 30px;
 	background-color:#444;
-	color:#fff;
+
 	font-size:25px;
 }
 
-.form_wrapper .container{
-	position: fixed;
-}
+
 
 body.modal-open .background-container{
     -webkit-filter: blur(4px);
@@ -41,7 +43,7 @@ filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='4');
 
 .form_wrapper form{
 	display: block;
-	background:#fff;
+	background:#feffef;
 	width:550px;
 
 }
@@ -89,9 +91,12 @@ filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='4');
 	display:block;
 	padding:10px 30px 0px 30px;
 	margin:10px 0px 0px 0px;
+    color: #000000;
 }
 
-
+.span-log{
+  color:#f0f0f0;
+}
 /*Inputs style*/
 
 .form_wrapper input[type="text"],
