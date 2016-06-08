@@ -10,7 +10,8 @@
           <%= link_to 'Publish travel', { :controller => :departures, :action => :new }, data: { modal: true } %>
         </li>
         <li>
-          <a href="#" id="preferences">Preferences</a>
+          <%= link_to 'Preferences', preferences_path, data: { modal: true } %>
+
         </li>
 
       </ul>

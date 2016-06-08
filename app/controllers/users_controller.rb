@@ -4,6 +4,12 @@ class UsersController < ApplicationController
 
 	respond_to :html, :json
 
+	def preferences
+		@preferences = nil;
+
+		respond_modal_with @preferences
+	end
+
 	def show
 		@user = User.find(params[:id])
 	end
@@ -47,6 +53,7 @@ class UsersController < ApplicationController
 			@departures = []
 		end
 	end
+
 
 	private
 		def user_params
