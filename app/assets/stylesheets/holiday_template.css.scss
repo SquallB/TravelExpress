@@ -1075,13 +1075,13 @@ hr { border-top: 1px solid #111010; }
   font-size:50px;
 }
 #loggedStatus {
-
-  background: transparent linear-gradient(to bottom, #F5D11D 0%, #F3D10E 1%, #EFCF1C 2%, #FCCD0D 4%, #F7CA0D 5%, #F9CB1E 6%, #F7CB10 7%, #F8CC14 8%, #F0C40C 54%, #EDC50C 55%, #E9C108 71%, #ECC008 78%, #E6BE06 91%, #E9BD06 93%, #E8BC06 100%) repeat scroll 0% 0%;
+  background: #f0f0f0;
 }
 
 
 .loggedStatusName{
   padding-top: 0px;
+
 
 }
 #loggedName{
@@ -1092,4 +1092,15 @@ hr { border-top: 1px solid #111010; }
   color: #000;
   font-weight: 800;
   font-size: 6px;
+}
+
+a.sign-up{
+  text-transform: uppercase;
+  border: none;
+  border-radius: 0;
+  color: #000;
+  font-weight: 800;
+  font-size: 35px;
+  width: 100%;
+  height: 100%;
 }
