@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get    'preferences'          =>  'users#preferences'
   get    'payment'              =>  'departures#payment'
   post   'payment'              =>  'departures#payment'
-  post   'login'                =>  'sessions#new'
+  post   'login'                =>  'sessions#create'
   delete 'logout'               =>  'sessions#destroy'
   resources :users do
     resources :preferences
