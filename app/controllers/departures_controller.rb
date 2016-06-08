@@ -13,6 +13,11 @@ class DeparturesController < ApplicationController
 		departures_passengers.each do |dp|
 			@current_capacity -= dp.passengers_number
 		end
+		if departures_passengers.where(:user_id => session[:user_id]).any?
+			@booked = true
+		else
+			@booked = false
+		end
 	end
 
 	def new
@@ -69,25 +74,30 @@ class DeparturesController < ApplicationController
 		passengers_number = params[:passengers_number].to_i
 		current_capacity = @departure.passenger_capacity
 		departures_passengers = DeparturesPassengers.where(:departure_id => @departure.id)
-		departures_passengers.each do |dp|
-			current_capacity -= dp.passengers_number
-		end
-		if (current_capacity - passengers_number) >= 0
-			departures_passengers = DeparturesPassengers.new
-			departures_passengers.departure_id = @departure.id
-			departures_passengers.user_id = session[:user_id]
-			departures_passengers.passengers_number = passengers_number
-
-			if departures_passengers.save
-
-				flash.now[:success] = 'Your travel is successfully booked'
-				redirect_to payment_path
-			else
-				flash.now[:danger] = 'Couldn\'t book the travel'
-				redirect_to @departure
+		if departures_passengers.where(:user_id => session[:user_id])
+			departures_passengers.each do |dp|
+				current_capacity -= dp.passengers_number
 			end
+			if (current_capacity - passengers_number) >= 0
+				departures_passengers = DeparturesPassengers.new
+				departures_passengers.departure_id = @departure.id
+				departures_passengers.user_id = session[:user_id]
+				departures_passengers.passengers_number = passengers_number
+
+				if departures_passengers.save
+
+					flash.now[:success] = 'Your travel is successfully booked'
+					redirect_to payment_path
+				else
+					flash.now[:danger] = 'Couldn\'t book the travel'
+					redirect_to @departure
+				end
+			else
+				flash.now[:danger] = 'Not enough seats in order to book the travel'
+				redirect_to @departure
+				end
 		else
-			flash.now[:danger] = 'Not enough seats in order to book the travel'
+			flash.now[:danger] = 'You have already booked this travel.'
 			redirect_to @departure
 		end
 	end

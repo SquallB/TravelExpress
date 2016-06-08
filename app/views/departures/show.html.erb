@@ -20,7 +20,10 @@
           </div>
         </div>
         <div class="section-margin-top">
-          <% if @current_capacity > 0 %>
+          <% if @booked == true %>
+               <p>You have already booked this travel.</p>
+          <% else
+             if @current_capacity > 0 %>
             <%= form_tag "/departures/#{@departure.id}/book", method: :post do %>
               <div class="form-group">
                 <div class="row">
@@ -36,7 +39,8 @@
             <% end %>
           <% else %>
             <p>There are no seats left.</p>
-          <% end %>
+          <% end
+             end %>
         </div>
       </div>
     </div>
