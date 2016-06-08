@@ -5,9 +5,8 @@ class UsersController < ApplicationController
 	respond_to :html, :json
 
 	def preferences
-		@preferences = nil;
-
-		respond_modal_with @preferences
+    @user = User.find(session[:user_id])
+		respond_modal_with @user
 	end
 
 	def show

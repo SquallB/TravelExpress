@@ -94,10 +94,14 @@
             <div class="tm-testimonials-box">
               <h3 class="tm-testimonials-title">Preferences</h3>
               <div class="tm-testimonials-content">
-                <div class="tm-testimonial">
-                  <p>"Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum."</p>
-                  <strong class="text-uppercase">John Smith</strong>
-                </div>
+                <% if user.preferences.any?
+                    user.preferences.each do |preference| %>
+                      <div class="tm-testimonial">
+                        <strong class="text-uppercase"><%= preference.title %></strong>
+                        <p><%= preference.content %></p>
+                      </div>
+                <% end
+                   end %>
               </div>
             </div>
           </div>

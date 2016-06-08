@@ -5,8 +5,8 @@ class CreateDepartures < ActiveRecord::Migration
       t.integer :passenger_capacity
       t.string :frequency
       t.float :price
-      t.references :start_address
-      t.references :end_address
+      t.references :start_address, index: true, foreign_key: true
+      t.references :end_address, index: true, foreign_key: true
       t.references :user, index: true, foreign_key: true
 
       t.timestamps null: false

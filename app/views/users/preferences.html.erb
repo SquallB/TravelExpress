@@ -1,38 +1,37 @@
+<div class="row">
+  <div class="col-lg-12">
+    <!-- Nav tabs -->
+    <div class="tm-home-box-research tm-home-box-1-center">
+      <ul class="nav nav-tabs tm-white-bg" role="tablist" id="hotelCarTabs">
 
-    <div class="row">
-      <div class="col-lg-12">
-        <!-- Nav tabs -->
-        <div class="tm-home-box-research tm-home-box-1-center">
-          <ul class="nav nav-tabs tm-white-bg" role="tablist" id="hotelCarTabs">
-
-            <li role="presentation" >
-              <a href="#car" aria-controls="car" role="tab" class="active">Add requierments</a>
-            </li>
-          </ul>
-          <!-- Tab panes -->
-          <div class="tab-content">
-            <div role="tabpanel" class="tab-pane fade tm-white-bg active in" id="car">
-              <div class="tm-search-box effect2">
-                <form action="#" method="post" class="hotel-search-form">
-                  <div class="row tm-form-inner">
-                    <div class="col-lg-12">
-                      <div class="form-group">
-                        <input placeholder="Title" class="form-control" type="text" />
-                      </div>
-                      <div class="form-group">
-                        <textarea class="form-control" type="text" rows="10"></textarea>
-                      </div>
-                    </div>
-
+        <li role="presentation" >
+          <a href="#car" aria-controls="car" role="tab" class="active">Add requierments</a>
+        </li>
+      </ul>
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade tm-white-bg active in" id="car">
+          <div class="tm-search-box effect2">
+            <%= form_for([@user, @user.preferences.build]) do |f| %>
+              <div class="row tm-form-inner">
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <%= f.text_field :title, placeholder: 'Title', class: 'form-control' %>
                   </div>
-                  <div class="form-group tm-yellow-gradient-bg text-center">
-                    <button type="submit" name="submit" class="tm-yellow-btn">Add your requierments</button>
+                  <div class="form-group">
+                     <%= f.text_area :content, placeholder: 'Content', class: 'form-control', rows: '10' %>
                   </div>
-                </form>
+                </div>
+
               </div>
-            </div>
+              <div class="form-group tm-yellow-gradient-bg text-center">
+                <%= f.submit 'Add', class: 'tm-yellow-btn' %>
+              </div>
+            <% end %>
           </div>
         </div>
-
       </div>
     </div>
+
+  </div>
+</div>

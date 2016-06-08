@@ -11,10 +11,12 @@ Rails.application.routes.draw do
   get    'profile'              =>  'users#profile'
   get    'preferences'          =>  'users#preferences'
   get    'payment'              =>  'departures#payment'
-  post    'payment'              =>  'departures#payment'
-  post   'login'                =>  'sessions#create'
+  post   'payment'              =>  'departures#payment'
+  post   'login'                =>  'sessions#new'
   delete 'logout'               =>  'sessions#destroy'
-  resources :users
+  resources :users do
+    resources :preferences
+  end
   resources :departures
 
   # The priority is based upon order of creation: first created -> highest priority.
