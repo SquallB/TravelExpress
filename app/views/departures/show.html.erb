@@ -1,17 +1,41 @@
-<section class="container tm-home-section-1 section-margin-top" id="more">
+<section class="container tm-home-section-1 section-margin-top bg-white" id="more">
   <div class="row">
-    <div class="flexslider effect2">
-      <%= image_tag 'about-1.jpg', alt:'image' %>
-      <div class="flex-caption">
-        <h2 class="slider-title">Welcome To Holiday</h2>
-        <h3 class="slider-subtitle">Gravida nibh vel velit auctor aliquet enean sollicitudin lorem quis auctor</h3>
-        <p class="slider-description">Holiday is free Bootstrap v3.3.5 responsive template for tour and travel websites. You can download and use this layout for any purpose. You do not need to provide a credit link to us. If you have any question, feel free to <a href="http://www.facebook.com/templatemo" target="_parent">contact us</a>. <br><br>
-          Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum.</p>
-        <div class="slider-social">
-          <a href="#" class="tm-social-icon"><i class="fa fa-twitter"></i></a>
-          <a href="#" class="tm-social-icon"><i class="fa fa-facebook"></i></a>
-          <a href="#" class="tm-social-icon"><i class="fa fa-pinterest"></i></a>
-          <a href="#" class="tm-social-icon"><i class="fa fa-google-plus"></i></a>
+    <div class="flexslider effect2 col-lg-12">
+      <div class="card">
+        <h2 class="slider-title">
+          <%= @departure.start_address.city %> <span class="glyphicon glyphicon-arrow-right"></span> <%= @departure.end_address.city %>
+        </h2>
+        <% if @departure.start_time %>
+            <h3 class="slider-subtitle gray-text"><%= @departure.start_time.strftime('%m/%d/%Y at %H:%M') %></h3>
+        <% end %>
+        <div class="row">
+          <div class="col-lg-6">
+            <h5>Pick-up address</h5>
+            <%= render :partial => 'shared/address', :locals => {:address => @departure.start_address} %>
+          </div>
+          <div class="col-lg-6">
+            <h5>Drop-off address</h5>
+            <%= render :partial => 'shared/address', :locals => {:address => @departure.end_address} %>
+          </div>
+        </div>
+        <div class="section-margin-top">
+          <% if @current_capacity > 0 %>
+            <%= form_tag "/departures/#{@departure.id}/book", method: :post do %>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-lg-2"><p class=""><strong><%= @current_capacity %> seats available</strong></p></div>
+                  <div class="col-lg-1">
+                    <%= select_tag :passengers_number, options_for_select(1..@current_capacity, params[:passengers_number]), class: 'form-control' %>
+                  </div>
+                  <div class="col-lg-1">
+                    <%= submit_tag 'Book', class: 'btn btn-primary' %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          <% else %>
+            <p>There are no seats left.</p>
+          <% end %>
         </div>
       </div>
     </div>

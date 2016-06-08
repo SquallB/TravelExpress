@@ -1,16 +1,17 @@
 Rails.application.routes.draw do
   root   'static_pages#home'
-  get    'index'              => 'static_pages#home'
-  get    'help'               => 'static_pages#help'
-  get    'about'              => 'static_pages#about'
-  get    'contact'            => 'static_pages#contact'
-  get    'signup'             => 'users#new'
-  get    'login'              => 'sessions#new'
-  get    'departures/search'  => 'departures#search'
-  get    'profile'            => 'users#profile'
+  get    'index'                =>  'static_pages#home'
+  get    'help'                 =>  'static_pages#help'
+  get    'about'                =>  'static_pages#about'
+  get    'contact'              =>  'static_pages#contact'
+  get    'signup'               =>  'users#new'
+  get    'login'                =>  'sessions#new'
+  get    'departures/search'    =>  'departures#search'
+  post   'departures/:id/book'  =>  'departures#book'
+  get    'profile'              =>  'users#profile'
   get    'preferences'        => 'users#preferences'
-  post   'login'              => 'sessions#create'
-  delete 'logout'             => 'sessions#destroy'
+  post   'login'                =>  'sessions#create'
+  delete 'logout'               =>  'sessions#destroy'
   resources :users
   resources :departures
 

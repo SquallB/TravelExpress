@@ -5,6 +5,7 @@ class Departure < ActiveRecord::Base
   belongs_to :user, :class_name => 'User'
   belongs_to :start_address, :class_name => 'Address'
   belongs_to :end_address, :class_name => 'Address'
+  has_many :departures_passengers, :class_name => 'DeparturesPassengers'
 
   validates :start_time,  presence: true
   validates :user,  presence: true

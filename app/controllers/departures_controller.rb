@@ -1,5 +1,5 @@
 class DeparturesController < ApplicationController
-	before_action :logged_in_user, only: [:new, :create, :edit, :update]
+	before_action :logged_in_user, only: [:new, :create, :edit, :update, :book]
 	respond_to :html, :json
 
 	def index
@@ -8,6 +8,11 @@ class DeparturesController < ApplicationController
 
 	def show
 		@departure = Departure.find(params[:id])
+		@current_capacity = @departure.passenger_capacity
+		departures_passengers = DeparturesPassengers.where(:departure_id => @departure.id)
+		departures_passengers.each do |dp|
+			@current_capacity -= dp.passengers_number
+		end
 	end
 
 	def new
@@ -57,6 +62,32 @@ class DeparturesController < ApplicationController
 		else
 			@departures = []
 		end
+	end
+
+  def book
+		@departure = Departure.find(params[:id])
+		passengers_number = params[:passengers_number].to_i
+		current_capacity = @departure.passenger_capacity
+		departures_passengers = DeparturesPassengers.where(:departure_id => @departure.id)
+		departures_passengers.each do |dp|
+			current_capacity -= dp.passengers_number
+		end
+		if (current_capacity - passengers_number) >= 0
+			departures_passengers = DeparturesPassengers.new
+			departures_passengers.departure_id = @departure.id
+			departures_passengers.user_id = session[':user_id']
+			departures_passengers.passengers_number = passengers_number
+
+			if departures_passengers.save
+				flash.now[:success] = 'Your travel is successfully booked'
+			else
+				flash.now[:danger] = 'Couldn\'t book the travel'
+			end
+		else
+			flash.now[:danger] = 'Not enough seats in order to book the travel'
+		end
+
+		redirect_to @departure
 	end
 
 	private
