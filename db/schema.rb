@@ -4,7 +4,7 @@
 # incrementally modify your database, and then regenerate this schema definition.
 #
 # Note that this schema.rb definition is the authoritative source for your
-# database schema. If you need to new the application database on another
+# database schema. If you need to create the application database on another
 # system, you should be using db:schema:load, not running all the migrations
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
@@ -43,6 +43,15 @@ ActiveRecord::Schema.define(version: 20160608064945) do
     t.integer  "user_id",           limit: 4
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+  end
+
+  create_table "departures_searches", force: :cascade do |t|
+    t.string   "start_city", limit: 255
+    t.string   "end_city",   limit: 255
+    t.string   "start_date", limit: 255
+    t.integer  "passengers", limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "preferences", force: :cascade do |t|

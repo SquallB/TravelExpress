@@ -7,7 +7,6 @@ class Departure < ActiveRecord::Base
   belongs_to :end_address, :class_name => 'Address'
   has_many :departures_passengers, :class_name => 'DeparturesPassengers'
 
-  validates :start_time,  presence: true
   validates :user,  presence: true
   validates :start_address,  presence: true
   validates :end_address,  presence: true
